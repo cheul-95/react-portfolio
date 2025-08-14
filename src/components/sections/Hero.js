@@ -7,7 +7,7 @@ function Hero() {
                 <div className="flex justify-center lg:justify-center mb-8 lg:mb-0">
                     <img
                         src={heroImage}
-                        alt="Developer portfolio hero image"
+                        alt="hero image"
                         className="aspect-square object-cover object-center rounded-full w-96"
                         loading="eager"
                         decoding="async"
