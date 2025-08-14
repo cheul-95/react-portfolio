@@ -28,7 +28,7 @@ function App() {
     //currentSection: activeSection,
     // };
     return (
-        <main>
+        <main className="">
             <Header />
 
             <main>
