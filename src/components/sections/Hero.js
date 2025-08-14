@@ -1,10 +1,6 @@
-import { useState } from "react";
 import heroImage from "../assets/images/myImage.png";
 
 function Hero() {
-    const [imageLoaded, setImageLoaded] = useState(false);
-    const [imageError, setImageError] = useState(false);
-
     return (
         <section className="bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 pt-16 ">
             <div className="grid lg:grid-cols-2 gap-12 items-center justify-center max-w-7xl mx-auto px-4 pt-16 pb-16">
