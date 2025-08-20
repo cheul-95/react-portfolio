@@ -40,17 +40,17 @@ function App() {
                     <About />
                 </section>
                 {/* 
-                <section id="skills">
-                    <Skills />
-                </section>
+                            <section id="skills">
+                                <Skills />
+                            </section>
 
-                <section id="projects">
-                    <Projects />
-                </section>
+                            <section id="projects">
+                                <Projects />
+                            </section>
 
-                <section id="contact">
-                    <Contact />
-                </section> */}
+                            <section id="contact">
+                                <Contact />
+                            </section> */}
             </main>
 
             {/*<Footer /> */}
