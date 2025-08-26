@@ -64,7 +64,7 @@ function Hero() {
                         <img
                             src={heroImage}
                             alt="hero-image"
-                            className={`aspect-square object-cover object-center rounded-full w-96 ring-2 ring-rose-500/40 shadow-xl transition-all duration-500 ${
+                            className={` w-72 h-72 aspect-square object-cover object-center rounded-full  ring-2 ring-rose-500/40 shadow-xl transition-all duration-500 ${
                                 isHovered ? "scale-110 ring-rose-400/60 shadow-2xl shadow-rose-500/20" : ""
                             }`}
                             loading="eager"
@@ -81,11 +81,10 @@ function Hero() {
 
                 <div className="text-center lg:text-left">
                     <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
-                        Welcome to 상철
-                        <span className="text-rose-400 relative inline-block">
-                            Portfolio
-                            <span className="absolute -bottom-2 left-0 w-full h-1 bg-rose-400/50 transform scale-x-0 animate-pulse group-hover:scale-x-100 transition-transform duration-700"></span>
-                        </span>
+                        Hello , I`m
+                        <br />
+                        <span className="leading-normal text-rose-400 relative inline-block mr-2">이상철</span>
+                        developer
                     </h1>
 
                     {/* 타이핑 효과가 있는 텍스트 */}
@@ -94,7 +93,7 @@ function Hero() {
                         <span className="animate-pulse text-rose-400">|</span>
                     </p>
 
-                    <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                    <div className="flex flex-col sm:flex-row gap-8 justify-center lg:justify-start">
                         <button
                             className="group px-8 py-3 bg-rose-500 text-white font-semibold rounded-lg hover:bg-rose-600 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 active:scale-95 relative overflow-hidden"
                             onMouseEnter={(e) => {

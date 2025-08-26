@@ -80,7 +80,7 @@ const getLevelText = (level) => {
 
 const SkillsSection = () => {
     return (
-        <div className="w-full bg-gray-100 py-12">
+        <div className="w-full bg-gray-100 py-16">
             <div className="max-w-5xl mx-auto px-4">
                 {/* 섹션 제목 */}
                 <div className="text-center mb-8">
