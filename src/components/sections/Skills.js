@@ -62,22 +62,6 @@ const skills = [
     },
 ];
 
-// 레벨에 따른 색상 반환
-const getLevelColor = (level) => {
-    if (level >= 80) return "bg-green-500";
-    if (level >= 70) return "bg-blue-500";
-    if (level >= 60) return "bg-yellow-500";
-    return "bg-gray-400";
-};
-
-// 레벨 텍스트 반환
-const getLevelText = (level) => {
-    if (level >= 85) return "Expert";
-    if (level >= 75) return "Advanced";
-    if (level >= 65) return "Intermediate";
-    return "Beginner";
-};
-
 const SkillsSection = () => {
     return (
         <div className="w-full bg-gray-100 py-16">
