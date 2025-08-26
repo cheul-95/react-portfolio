@@ -110,11 +110,15 @@ function Hero() {
                                 e.target.appendChild(ripple);
                                 setTimeout(() => ripple.remove(), 600);
                             }}
+                            onClick={() => (window.location.href = "#projects")}
                         >
                             <span className="relative z-10">View My Work</span>
                         </button>
 
-                        <button className="group px-8 py-3 border-2 border-gray-600 text-gray-300 font-semibold rounded-lg hover:border-rose-400 hover:text-rose-400 transition-all duration-300 hover:bg-rose-500/5 transform hover:-translate-y-1 active:scale-95 relative">
+                        <button
+                            className="group px-8 py-3 border-2 border-gray-600 text-gray-300 font-semibold rounded-lg hover:border-rose-400 hover:text-rose-400 transition-all duration-300 hover:bg-rose-500/5 transform hover:-translate-y-1 active:scale-95 relative"
+                            onClick={() => (window.location.href = "#contact")}
+                        >
                             <span className="group-hover:animate-pulse">Contact Me</span>
                         </button>
                     </div>
