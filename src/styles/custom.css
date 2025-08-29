@@ -9,3 +9,17 @@
 .SDSamliphopangche_Outline {
     font-family: "SDSamliphopangche_Outline", sans-serif;
 }
+
+body {
+    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="-2 0 36 32"><g transform="scale(-1,1) translate(-48,0)"><text y="24" font-size="24" x="16">🚀</text></g></svg>'),
+        auto;
+}
+@keyframes shakeClockwise {
+    0%,
+    100% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(-10deg);
+    }
+}
