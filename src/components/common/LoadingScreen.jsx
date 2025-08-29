@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import StarCanvas from "../hooks/useStarCanvas";
 const LoadingScreen = ({ onComplete }) => {
     const [progress, setProgress] = useState(0);
@@ -12,8 +12,8 @@ const LoadingScreen = ({ onComplete }) => {
                     clearInterval(progressInterval);
                     // 로딩 완료 후 페이드아웃
                     setTimeout(() => {
-                        // setIsAnimating(false);
                         setTimeout(() => onComplete?.(), 300);
+                        setIsAnimating(false);
                     }, 500);
                     return 100;
                 }
