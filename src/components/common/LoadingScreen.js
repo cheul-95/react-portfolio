@@ -33,7 +33,7 @@ const LoadingScreen = ({ onComplete }) => {
             <StarCanvas />
             <div className="text-center z-10">
                 {/* 타이틀 */}
-                <h1 className="text-4xl font-bold text-white mb-4 animate-pulse">PORTFOLIO</h1>
+                <h2 className="text-4xl font-bold text-white mb-4 animate-pulse">PORTFOLIO</h2>
 
                 {/* 프로그레스 바 */}
                 <div className="w-80 max-w-xs mx-auto">

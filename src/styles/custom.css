@@ -13,7 +13,21 @@
 body {
     cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="-2 0 36 32"><g transform="scale(-1,1) translate(-48,0)"><text y="24" font-size="24" x="16">🚀</text></g></svg>'),
         auto;
+    background-color: #0f172a; /* 또는 원하는 배경색 */
+    margin: 0;
+    padding: 0;
 }
+
+button:hover,
+a:hover,
+[onclick]:hover,
+[role="button"]:hover,
+input[type="button"]:hover,
+input[type="submit"]:hover,
+.cursor-pointer:hover {
+    cursor: url("/pointer.png");
+}
+
 @keyframes shakeClockwise {
     0%,
     100% {
