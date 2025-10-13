@@ -163,7 +163,7 @@ const About = () => {
                                 key={item.id}
                                 className={`group relative bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-6 lg:p-8 
                                     hover:bg-white/10 hover:border-white/20 hover:scale-105 hover:shadow-2xl 
-                                    transition-all duration-500 ease-out cursor-pointer
+                                    transition-all duration-500 ease-out
                                     focus:outline-none focus:ring-2 focus:ring-pink-400/50
                                     ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
                                 tabIndex={0}

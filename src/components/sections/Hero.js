@@ -111,31 +111,6 @@ function Hero() {
                             </span>
                         </h3>
 
-                        {/* 기술 스택 */}
-                        <section aria-label="사용 기술 스택">
-                            <ul className="flex flex-wrap gap-2 sm:gap-3 mt-6 sm:mt-8">
-                                {TECH_STACK.map((tech, index) => (
-                                    <li key={tech.name}>
-                                        <span
-                                            className={`
-                                                inline-flex items-center
-                                                px-3 sm:px-4 py-1.5 sm:py-2
-                                                rounded-xl border border-white/10
-                                                text-xs sm:text-sm font-medium text-slate-200
-                                                transition-transform duration-300
-                                                hover:scale-110 hover:-translate-y-1
-                                                hover:border-white/30 hover:text-white
-                                                focus:outline-none focus:ring-2 focus:ring-pink-400/50
-                                                `}
-                                            style={{ animationDelay: `${1200 + index * 150}ms` }}
-                                        >
-                                            {tech.name}
-                                        </span>
-                                    </li>
-                                ))}
-                            </ul>
-                        </section>
-
                         {/* CTA 버튼 */}
                         <div role="group" className="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-6 sm:pt-8">
                             <button
