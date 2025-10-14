@@ -87,7 +87,7 @@ function Header() {
                 min-w-[200px] md:min-w-[140px]
               `}
                         >
-                            {["About", "Skills", "Projects", "Contact"].map((item, index) => (
+                            {["Skills", "Projects", "About", "Contact"].map((item, index) => (
                                 <li
                                     key={item}
                                     className={`transform transition-all ease-out ${

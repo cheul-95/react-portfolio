@@ -48,7 +48,7 @@ const About = () => {
     return (
         <section
             id="about"
-            className="min-h-screen relative overflow-hidden bg-gradient-to-b from-indigo-900 to-slate-500"
+            className="min-h-screen relative overflow-hidden bg-gradient-to-b from-sky-900 to-sky-700"
             aria-labelledby="about-heading"
         >
             <StarCanvas />
@@ -88,7 +88,7 @@ const About = () => {
                                         <dt className="text-sm sm:text-base font-semibold text-rose-400 mb-2">
                                             Q. 프론트엔드 개발자로 전향한 이유가 있나요?
                                         </dt>
-                                        <dd className="text-xs sm:text-sm md:text-base text-gray-200 leading-relaxed">
+                                        <dd className="text-xs sm:text-sm md:text-base text-gray-200 leading-relaxed gmarket-medium">
                                             네. 백엔드 개발을 하면서도 항상 사용자와 맞닿아 있는 화면에 더 많은 관심이
                                             갔습니다. 프로젝트 중 프론트엔드의 한계를 직접 경험하며 부족함을 채우고
                                             싶다는 생각이 들었고, 학습을 이어가면서{" "}
@@ -103,7 +103,7 @@ const About = () => {
                                         <dt className="text-sm sm:text-base font-semibold text-rose-400 mb-2">
                                             Q. 이전 경험이 프론트엔드 개발에 어떻게 도움이 되나요?
                                         </dt>
-                                        <dd className="text-xs sm:text-sm md:text-base text-gray-200 leading-relaxed">
+                                        <dd className="text-xs sm:text-sm md:text-base text-gray-200 leading-relaxed gmarket-medium">
                                             네. 백엔드 경험 덕분에 API 구조나 데이터 흐름을 이해하는 데 강점이 있습니다.
                                             덕분에 프론트엔드에서{" "}
                                             <span className="font-semibold text-rose-400">
@@ -117,7 +117,7 @@ const About = () => {
                                         <dt className="text-sm sm:text-base font-semibold text-rose-400 mb-2">
                                             Q. 앞으로 프론트엔드에서 이루고 싶은 목표는 무엇인가요?
                                         </dt>
-                                        <dd className="text-xs sm:text-sm md:text-base text-gray-200 leading-relaxed">
+                                        <dd className="text-xs sm:text-sm md:text-base text-gray-200 leading-relaxed gmarket-medium">
                                             사용자 중심의 직관적이고 깔끔한 웹 서비스를 만드는 것이 목표입니다. 또한
                                             최신 기술을 익혀{" "}
                                             <span className="font-semibold text-rose-400">성능과 접근성</span>을 모두
@@ -192,7 +192,7 @@ const About = () => {
                                 {/* 설명 */}
                                 <p
                                     id={`${item.id}-desc`}
-                                    className="text-sm lg:text-base text-gray-300 leading-relaxed group-hover:text-gray-200 transition-colors duration-300"
+                                    className="text-sm lg:text-base text-gray-300 leading-relaxed group-hover:text-gray-200 transition-colors duration-300 gmarket-medium"
                                 >
                                     {item.description}
                                 </p>

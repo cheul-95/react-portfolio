@@ -114,13 +114,13 @@ function Hero() {
                         {/* CTA 버튼 */}
                         <div role="group" className="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-6 sm:pt-8">
                             <button
-                                className="group relative px-6 sm:px-8 py-3 bg-gradient-to-r from-pink-500 to-rose-500 rounded-2xl font-semibold text-white"
+                                className="gmarket-medium group relative px-6 sm:px-8 py-3 bg-gradient-to-r from-pink-500 to-rose-500 rounded-2xl text-white"
                                 onClick={() => (window.location.href = "/#projects")}
                             >
                                 프로젝트 보기
                             </button>
                             <button
-                                className="group px-6 sm:px-8 py-3 bg-white/5 rounded-2xl font-semibold text-white border"
+                                className="gmarket-medium group px-6 sm:px-8 py-3 bg-white/5 rounded-2xl text-white border"
                                 onClick={() => (window.location.href = "/#contact")}
                             >
                                 연락하기 →

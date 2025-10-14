@@ -31,11 +31,6 @@ function App() {
                                 <Hero />
                             </Suspense>
                         </section>
-                        <section id="about">
-                            <Suspense fallback={<SectionLoader />}>
-                                <About />
-                            </Suspense>
-                        </section>
                         <section id="skills">
                             <Suspense fallback={<SectionLoader />}>
                                 <SkillsSection />
@@ -44,6 +39,11 @@ function App() {
                         <section id="projects">
                             <Suspense fallback={<SectionLoader />}>
                                 <Projects />
+                            </Suspense>
+                        </section>
+                        <section id="about">
+                            <Suspense fallback={<SectionLoader />}>
+                                <About />
                             </Suspense>
                         </section>
                     </main>

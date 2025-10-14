@@ -1,13 +1,43 @@
 @font-face {
-    font-family: "SDSamliphopangche_Outline";
-    src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts-20-12@1.0/SDSamliphopangche_Outline.woff")
-        format("woff");
-    font-weight: normal;
-    font-style: normal;
+    font-family: "SeoulNotice";
+    src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/2505-1@1.0/SeoulAlrimTTF-Bold.woff2") format("woff2");
+    font-weight: 700;
+    font-display: swap;
+}
+@font-face {
+    font-family: "PyeojinGothic";
+    src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/2504-1@1.0/PyeojinGothic-Light.woff2") format("woff2");
+    font-weight: 300;
+    font-display: swap;
+}
+@font-face {
+    font-family: "GMarketSans-Light";
+    src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansLight.woff") format("woff");
+    font-weight: 300;
+    font-display: swap;
+}
+@font-face {
+    font-family: "GMarketSans-Medium";
+    src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff") format("woff");
+    font-weight: 500;
+    font-display: swap;
+}
+@font-face {
+    font-family: "GMarketSans-Bold";
+    src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansBold.woff") format("woff");
+    font-weight: 700;
+    font-display: swap;
 }
 
 .SDSamliphopangche_Outline {
     font-family: "SDSamliphopangche_Outline", sans-serif;
+}
+.gmarket-light {
+    font-family: "GMarketSans-Light", sans-serif;
+}
+
+.gmarket-medium {
+    font-family: "GMarketSans-Medium", sans-serif;
 }
 
 body {
@@ -16,6 +46,7 @@ body {
     background-color: #0f172a; /* 또는 원하는 배경색 */
     margin: 0;
     padding: 0;
+    font-family: "GMarketSans-Bold", sans-serif;
 }
 
 button:hover,
