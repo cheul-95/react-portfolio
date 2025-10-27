@@ -1,8 +1,5 @@
 import heroImage from "../assets/images/myImage.png";
 import { useEffect, useState, useCallback } from "react";
-
-const TECH_STACK = [{ name: "HTML" }, { name: "JavaScript" }, { name: "CSS" }, { name: "React" }, { name: "Tailwind" }];
-
 const PORTFOLIO_TEXT = "PORTFOLIO";
 
 const NamePart = ({ text, index, glitchColor, glitchOffset }) => (

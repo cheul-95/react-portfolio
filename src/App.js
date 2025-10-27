@@ -8,6 +8,7 @@ const Hero = lazy(() => import("./components/sections/Hero"));
 const About = lazy(() => import("./components/sections/About"));
 const SkillsSection = lazy(() => import("./components/sections/Skills"));
 const Projects = lazy(() => import("./components/sections/Projects"));
+const Contact = lazy(() => import("./components/sections/Contact"));
 
 // Fallback 컴포넌트
 const SectionLoader = () => (
@@ -44,6 +45,11 @@ function App() {
                         <section id="about">
                             <Suspense fallback={<SectionLoader />}>
                                 <About />
+                            </Suspense>
+                        </section>
+                        <section id="contact">
+                            <Suspense fallback={<SectionLoader />}>
+                                <Contact />
                             </Suspense>
                         </section>
                     </main>

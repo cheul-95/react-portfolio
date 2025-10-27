@@ -2,8 +2,10 @@ import React, { useState } from "react";
 import melon from "../assets/images/melon.png";
 import Recipe from "../assets/images/Recipe.png";
 import Portfolio from "../assets/images/Portfolio.png";
+import stock from "../assets/images/stocks.png";
 import market from "../assets/images/market.png";
 import movie from "../assets/images/movie.png";
+
 const projectsData = [
     {
         id: 1,
@@ -25,17 +27,16 @@ const projectsData = [
         link: "http://sclee-portfolio.s3-website.ap-northeast-2.amazonaws.com/",
         github: "https://github.com/cheul-95/react-portfolio",
     },
-    // {
-    //     id: 3,
-    //     title: "Weather Dashboard",
-    //     description: "실시간 날씨 정보와 7일 예보 제공",
-    //     image: "https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?w=600&h=400&fit=crop",
-    //     tags: ["React", "API"],
-    //     category: "major",
-    //     link: "#",
-    //     github: "#",
-    // },
-
+    {
+        id: 3,
+        title: "주식, 국제 금 시세  조회 사이트",
+        description: "한국 투자 증권 API 활용 하여 국내 주식, 국제 금 시세 사이트 설계 및 개발 개인 프로젝트 입니다.",
+        image: stock,
+        tags: ["Next.js", "Typescirpt", "tailwindcss"],
+        category: "major",
+        link: "https://korean-stock-r0gd0hiqi-leesangcheols-projects.vercel.app/",
+        github: "https://github.com/cheul-95/korean-stock-app",
+    },
     {
         id: 4,
         title: "오픈마켓 서비스",
@@ -70,7 +71,6 @@ const projectsData = [
 
 const Projects = () => {
     const [filter, setFilter] = useState("all");
-    const [hoveredId, setHoveredId] = useState(null);
 
     const filteredProjects =
         filter === "all" ? projectsData : projectsData.filter((project) => project.category === filter);
@@ -79,26 +79,24 @@ const Projects = () => {
     const minorProjects = filteredProjects.filter((p) => p.category === "minor");
 
     return (
-        <section className="w-full py-16 relative overflow-hidden bg-gradient-to-b from-slate-500 to-sky-900 text-white">
-            <div className="container mx-auto px-4 max-w-7xl">
+        <section className="w-full py-12 md:py-20 relative overflow-hidden bg-gradient-to-b from-slate-500 to-sky-900">
+            <div className="container mx-auto px-4 max-w-6xl">
                 {/* Header */}
-                <header className="text-center mb-12">
-                    <h2 className="text-4xl md:text-5xl font-black mb-3">
-                        <span className="bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
-                            PROJECTS
-                        </span>
+                <header className="text-center mb-12 md:mb-16">
+                    <h2 className="text-3xl md:text-4xl lg:text-5xl font-black mb-4 md:mb-6 text-white">
+                        PRO<span className="text-pink-400">JECTS</span>
                     </h2>
 
                     {/* Filter buttons */}
-                    <div className="flex justify-center gap-3 mt-6">
+                    <div className="flex justify-center gap-2 md:gap-3">
                         {["all", "major", "minor"].map((category) => (
                             <button
                                 key={category}
                                 onClick={() => setFilter(category)}
-                                className={`leading-normal px-5 py-2 rounded-2xl text-sm font-semibold transition-all duration-300 ${
+                                className={`px-4 md:px-6 py-2 md:py-2.5 rounded-full text-xs md:text-sm font-bold transition-all duration-300 ${
                                     filter === category
-                                        ? "bg-pink-400 text-white shadow-lg"
-                                        : "bg-gray-200 text-gray-700 hover:bg-gray-300"
+                                        ? "bg-pink-500 text-white shadow-lg shadow-pink-500/50"
+                                        : "bg-white/90 text-gray-700 hover:bg-white"
                                 }`}
                             >
                                 {category === "all" ? "전체" : category === "major" ? "주요" : "미니"}
@@ -109,67 +107,64 @@ const Projects = () => {
 
                 {/* Major Projects */}
                 {(filter === "all" || filter === "major") && majorProjects.length > 0 && (
-                    <div className="mb-12">
-                        <h3 className="text-2xl font-bold text-white mb-6 flex items-center gap-2">
-                            <span className="w-2 h-8 bg-gradient-to-b from-purple-400 to-purple-500 rounded-full"></span>
+                    <div className="mb-12 md:mb-16">
+                        <h3 className="text-xl md:text-2xl font-bold text-white mb-4 md:mb-6 flex items-center gap-2 md:gap-3">
+                            <span className="w-1 md:w-1.5 h-6 md:h-8 bg-gradient-to-b from-purple-400 to-purple-600 rounded-full"></span>
                             주요 프로젝트
                         </h3>
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div className="space-y-4 md:space-y-6">
                             {majorProjects.map((project) => (
                                 <div
                                     key={project.id}
-                                    onMouseEnter={() => setHoveredId(project.id)}
-                                    onMouseLeave={() => setHoveredId(null)}
-                                    className="group relative bg-gradient-to-br from-gray-50 to-gray-100 rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-500 border border-gray-400"
+                                    className="bg-white/10 backdrop-blur-md rounded-xl md:rounded-2xl p-4 md:p-6 border border-white/20 hover:bg-white/15 transition-all duration-300"
                                 >
-                                    <div className="relative h-64 overflow-hidden">
-                                        <img
-                                            src={project.image}
-                                            alt={project.title}
-                                            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                                        />
-                                        <div className="absolute inset-0 bg-black/50 to-transparent"></div>
-
-                                        <div className="absolute top-4 right-4">
-                                            <span className="px-2 py-1 bg-purple-500 text-white/80 text-xs rounded-2xl border border-white/50 leading-normal">
-                                                MAJOR
-                                            </span>
+                                    <div className="flex flex-col lg:flex-row gap-4 md:gap-6">
+                                        {/* 이미지 */}
+                                        <div className="w-full lg:w-2/5 relative rounded-lg md:rounded-xl overflow-hidden">
+                                            <img
+                                                src={project.image}
+                                                alt={project.title}
+                                                className="w-full h-48 md:h-64 object-cover"
+                                            />
                                         </div>
 
-                                        <div className="absolute bottom-4 left-4 right-4">
-                                            <h4 className="text-2xl font-bold text-white/90 mb-1">{project.title}</h4>
-                                            <div className="flex flex-wrap gap-2 mb-3">
-                                                {project.tags.map((tag, index) => (
-                                                    <span
-                                                        key={index}
-                                                        className="px-2 py-1 text-xs bg-white/20 backdrop-blur-sm text-white/60 rounded border border-white/30"
-                                                    >
-                                                        {tag}
-                                                    </span>
-                                                ))}
+                                        {/* 정보 */}
+                                        <div className="flex-1 flex flex-col justify-between">
+                                            <div>
+                                                <h4 className="text-xl md:text-2xl font-bold text-white mb-2 md:mb-3">
+                                                    {project.title}
+                                                </h4>
+                                                <p className="text-white/80 text-sm md:text-base mb-3 md:mb-4 leading-relaxed">
+                                                    {project.description}
+                                                </p>
+                                                <div className="flex flex-wrap gap-1.5 md:gap-2">
+                                                    {project.tags.map((tag, idx) => (
+                                                        <span
+                                                            key={idx}
+                                                            className="px-2 md:px-3 py-1 md:py-1.5 bg-white/20 text-white text-xs md:text-sm font-semibold rounded md:rounded-lg"
+                                                        >
+                                                            {tag}
+                                                        </span>
+                                                    ))}
+                                                </div>
                                             </div>
-                                        </div>
 
-                                        <div
-                                            className={`absolute bg-black/80 inset-0 flex flex-col items-center justify-center gap-3 transition-opacity duration-300 ${
-                                                hoveredId === project.id ? "opacity-100" : "opacity-0"
-                                            }`}
-                                        >
-                                            <p className="text-white text-center px-6 mb-2 gmarket-light">
-                                                {project.description}
-                                            </p>
-                                            <div className="flex gap-3">
+                                            <div className="flex flex-col sm:flex-row gap-2 md:gap-3 mt-3 md:mt-4">
                                                 <a
                                                     href={project.link}
-                                                    className="px-6 py-2 bg-white text-black rounded-lg font-semibold hover:scale-105 transition-transform duration-300 shadow-lg"
+                                                    className="px-4 md:px-5 py-2 md:py-2.5 bg-purple-700 text-white rounded-lg font-bold hover:bg-purple-600 transition-colors text-center text-sm md:text-base"
                                                 >
-                                                    View Demo
+                                                    프로젝트 보기
                                                 </a>
                                                 <a
                                                     href={project.github}
-                                                    className="px-6 py-2 bg-gray-900 text-white rounded-lg font-semibold hover:scale-105 transition-transform duration-300 shadow-lg flex items-center gap-2 border border-gray-700"
+                                                    className="px-4 md:px-5 py-2 md:py-2.5 bg-white/20 text-white rounded-lg font-bold hover:bg-white/30 transition-colors flex items-center justify-center gap-2 text-sm md:text-base"
                                                 >
-                                                    <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                                                    <svg
+                                                        className="w-4 md:w-5 h-4 md:h-5"
+                                                        fill="currentColor"
+                                                        viewBox="0 0 24 24"
+                                                    >
                                                         <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
                                                     </svg>
                                                     GitHub
@@ -186,82 +181,52 @@ const Projects = () => {
                 {/* Minor Projects */}
                 {(filter === "all" || filter === "minor") && minorProjects.length > 0 && (
                     <div>
-                        <h3 className="text-2xl font-bold text-white mb-6 flex items-center gap-2">
-                            <span className="w-2 h-8 bg-gradient-to-b from-cyan-400 to-blue-500 rounded-full"></span>
+                        <h3 className="text-xl md:text-2xl font-bold text-white mb-4 md:mb-6 flex items-center gap-2 md:gap-3">
+                            <span className="w-1 md:w-1.5 h-6 md:h-8 bg-gradient-to-b from-cyan-400 to-blue-500 rounded-full"></span>
                             미니 프로젝트
                         </h3>
-                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <div className="grid grid-cols-1 gap-4 md:gap-5">
                             {minorProjects.map((project) => (
                                 <div
                                     key={project.id}
-                                    onMouseEnter={() => setHoveredId(project.id)}
-                                    onMouseLeave={() => setHoveredId(null)}
-                                    className="group relative bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-gray-400"
+                                    className="bg-white/10 backdrop-blur-md rounded-lg md:rounded-xl p-4 md:p-5 border border-white/20 hover:bg-white/15 transition-all duration-300"
                                 >
-                                    <div className="relative h-48 overflow-hidden">
-                                        <img
-                                            src={project.image}
-                                            alt={project.title}
-                                            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                                        />
-                                        <div className="absolute inset-0 bg-black/50"></div>
-
-                                        <div className="absolute top-3 right-3">
-                                            <span className="px-2 py-1 bg-blue-500 text-white/80 text-xs rounded-2xl border border-white/50 ">
-                                                MINI
-                                            </span>
+                                    <div className="flex flex-col sm:flex-row items-start gap-3 md:gap-4">
+                                        {/* 이미지 */}
+                                        <div className="w-full sm:w-32 md:w-40 lg:w-56 h-32 md:h-32 lg:h-40 rounded-lg overflow-hidden flex-shrink-0">
+                                            <img
+                                                src={project.image}
+                                                alt={project.title}
+                                                className="w-full h-full object-cover"
+                                            />
                                         </div>
 
-                                        <div className="absolute bottom-3 left-3 right-3">
-                                            <h4 className="text-lg font-bold text-white/90 mb-2">{project.title}</h4>
-                                        </div>
-
-                                        <div
-                                            className={`absolute inset-0 bg-black/80 flex flex-col items-center justify-center gap-3 p-4 transition-opacity duration-300 ${
-                                                hoveredId === project.id ? "opacity-100" : "opacity-0"
-                                            }`}
-                                        >
-                                            <p className="text-white text-center text-sm mb-2">{project.description}</p>
-                                            <div className="flex gap-2">
+                                        {/* 정보 */}
+                                        <div className="flex-1 w-full">
+                                            <h4 className="text-base md:text-lg font-bold text-white mb-1.5 md:mb-2">
+                                                {project.title}
+                                            </h4>
+                                            <p className="text-white/70 text-xs md:text-sm mb-2 md:mb-3 leading-relaxed">
+                                                {project.description}
+                                            </p>
+                                            <div className="flex flex-wrap gap-1.5 md:gap-2 mb-2 md:mb-3">
+                                                {project.tags.map((tag, idx) => (
+                                                    <span
+                                                        key={idx}
+                                                        className="px-2 py-0.5 md:py-1 bg-white/20 text-white text-xs font-semibold rounded"
+                                                    >
+                                                        {tag}
+                                                    </span>
+                                                ))}
+                                            </div>
+                                            <div className="flex flex-col xs:flex-row gap-2">
                                                 <a
                                                     href={project.link}
-                                                    className="p-2 bg-white text-blue-600 rounded-full hover:scale-110 transition-transform duration-300 shadow-lg"
-                                                    title="View Demo"
+                                                    className="text-cyan-400 hover:text-cyan-300 text-xs md:text-sm font-semibold lg:pt-9"
                                                 >
-                                                    <svg
-                                                        className="w-5 h-5"
-                                                        fill="none"
-                                                        stroke="currentColor"
-                                                        viewBox="0 0 24 24"
-                                                    >
-                                                        <path
-                                                            strokeLinecap="round"
-                                                            strokeLinejoin="round"
-                                                            strokeWidth={2}
-                                                            d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
-                                                        />
-                                                        <path
-                                                            strokeLinecap="round"
-                                                            strokeLinejoin="round"
-                                                            strokeWidth={2}
-                                                            d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
-                                                        />
-                                                    </svg>
+                                                    프로젝트 보기 →
                                                 </a>
                                             </div>
-                                        </div>
-                                    </div>
-
-                                    <div className="p-4 bg-gray-400 ">
-                                        <div className="flex flex-wrap gap-2">
-                                            {project.tags.map((tag, index) => (
-                                                <span
-                                                    key={index}
-                                                    className="px-2 py-1 text-xs bg-blue-100 text-blue-700 rounded-md font-medium"
-                                                >
-                                                    {tag}
-                                                </span>
-                                            ))}
                                         </div>
                                     </div>
                                 </div>
