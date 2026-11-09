@@ -108,6 +108,13 @@ function Hero() {
                             </span>
                         </h3>
 
+                        {/* 직무 */}
+                        <p className="gmarket-medium text-sm sm:text-base md:text-lg text-gray-300">
+                            <span className="font-bold text-pink-400">Full-Stack Developer</span>
+                            <span className="text-gray-500"> · </span>
+                            PHP · Java · React
+                        </p>
+
                         {/* CTA 버튼 */}
                         <div role="group" className="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-6 sm:pt-8">
                             <button
@@ -129,10 +136,10 @@ function Hero() {
                     <figure className="flex justify-center items-center order-1 lg:order-2 relative">
                         <img
                             src={heroImage}
-                            alt="이상철 프론트엔드 개발자 프로필 사진"
+                            alt="이상철 풀스택 개발자 프로필 사진"
                             className="select-none relative z-10 drop-shadow-2xl w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96 object-cover hover:drop-shadow-[0_0_30px_rgba(236,72,153,0.6)] hover:scale-105 transition-all duration-500 floating-image animate-[shakeClockwise_1s_ease-in-out_infinite]"
                         />
-                        <figcaption className="sr-only">프론트엔드 개발자 이상철</figcaption>
+                        <figcaption className="sr-only">풀스택 개발자 이상철</figcaption>
                     </figure>
                 </div>
             </div>

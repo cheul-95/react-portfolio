@@ -55,7 +55,7 @@ const skills = [
         description: "컴포넌트 개발",
         detailedDescription:
             "컴포넌트 기반 개발을 통해 재사용성과 유지보수성이 뛰어난 웹 애플리케이션을 구축하는 것이 목표입니다. React Hooks와 상태 관리를 활용하여 복잡한 사용자 인터페이스를 효율적으로 관리하고, 사용자 경험을 최우선으로 고려한 인터랙티브한 웹 서비스를 개발하겠습니다.",
-        experience: "학습 중",
+        experience: "실무 및 프로젝트 경험",
         color: "#61dafb",
         orbitRadius: 260,
         mobileOrbitRadius: 100,
@@ -69,7 +69,7 @@ const skills = [
         category: "Backend",
         description: "웹 개발 경험",
         detailedDescription:
-            "안정적이고 확장 가능한 백엔드 시스템 구축에 전문성을 가지고 있습니다. Spring Framework를 활용한 RESTful API 설계와 마이크로서비스 아키텍처 구현을 통해, 대용량 트래픽을 안정적으로 처리할 수 있는 서버 시스템을 구축하겠습니다. 이를 통해 비즈니스 성장을 지원하는 견고한 백엔드 인프라를 제공할 것입니다.",
+            "지넥슨에서 보험 설계사용 전자서명 문서 시스템(Java, Gradle, Docker)을 유지보수하며 파일 누락을 막는 방어 로직을 추가했고, 네오컴즈에서는 전자정부프레임워크 기반 프로젝트를 개발했습니다. 개인 프로젝트 Shop API에서는 Spring Boot 4, Spring Security + JWT, JPA로 커머스 API를 설계 · 배포하며 N+1 방지와 재고 동시성 제어를 다루고 있습니다.",
         experience: "실무 경험",
         color: "#f89820",
         orbitRadius: 330,
@@ -84,7 +84,7 @@ const skills = [
         category: "Backend",
         description: "웹 개발 경험",
         detailedDescription:
-            "빠른 웹 서비스 개발과 효율적인 서버 사이드 로직 구현을 전문으로 합니다. CodeIgniter과 같은 모던 프레임워크를 활용하여 보안성이 뛰어나고 유지보수가 용이한 웹 애플리케이션을 개발할 것입니다. CMS 구축과 API 개발을 통해 클라이언트의 비즈니스 요구사항을 신속하고 정확하게 구현하겠습니다.",
+            "4년 넘게 실무 주력 언어로 사용했습니다. CodeIgniter4로 정산 배치 자동화(3시간 → 30분)와 이미지 셀프 업로드를 구축했고, Laravel REST API로 폐배터리 관리자 페이지를 5일 만에 단독 개발했습니다. WordPress · 그누보드 · 영카트 기반 15개 이상의 클라이언트 프로젝트를 개발 · 유지보수했습니다.",
         experience: "실무 경험",
         color: "#777bb4",
         orbitRadius: 330,
@@ -99,7 +99,7 @@ const skills = [
         category: "Database",
         description: "DB 설계 및 관리",
         detailedDescription:
-            "효율적인 데이터 구조 설계와 최적화된 쿼리 작성을 통해 고성능 데이터베이스 시스템을 구축합니다. 인덱싱 전략, 정규화, 그리고 백업/복구 시스템 구축을 통해 데이터의 무결성과 가용성을 보장할 것입니다. 대용량 데이터 처리와 실시간 분석이 가능한 안정적인 데이터베이스 환경을 제공하겠습니다.",
+            "MySQL · MariaDB를 실무에서 사용했습니다. 엑셀 정산 계산식을 GROUP BY 집계 쿼리로 옮기고, 트랜잭션과 유니크 키로 배치 재실행 시 중복 정산을 막았습니다. EXPLAIN 기반 인덱스 정리와 N+1 쿼리 개선으로 레거시 서비스의 성능 문제도 해결했습니다.",
         experience: "실무 경험",
         color: "#4479a1",
         orbitRadius: 260,

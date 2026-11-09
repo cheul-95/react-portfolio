@@ -8,6 +8,45 @@ import movie from "../assets/images/movie.png";
 
 const projectsData = [
     {
+        id: 7,
+        title: "Shop API (커머스 백엔드)",
+        description:
+            "회원 · 상품 · 주문 · 재고를 다루는 커머스 REST API입니다. 단순 CRUD를 넘어 동시 주문 상황의 재고 정합성과 JPA N+1 문제를 직접 재현하고 개선하는 것을 목표로 합니다.",
+        role: "개인 프로젝트 | 백엔드 설계 · 개발 · 배포",
+        achievement: "shop-api.lsch.co.kr 실서버 배포, Swagger UI로 API 직접 호출 가능",
+        details: [
+            "Spring Security + JWT(HS256) 필터 기반 Stateless 인증 · 인가 구현",
+            "비즈니스 규칙(재고 차감, 주문 생성 · 취소)을 엔티티 메서드로 캡슐화하고 주문 시점 가격 별도 저장",
+            "@EntityGraph와 batch fetch size로 상품 목록 조회 N+1 방지, open-in-view 비활성화",
+            "{code, message} 형식의 공통 에러 응답으로 필터 단계 401/403까지 통일",
+            "Docker Compose로 MySQL · Redis 로컬 환경 구성, JUnit 5 · Mockito 단위 테스트 작성",
+        ],
+        challenges: [
+            {
+                problem: "회원가입 시 동시 요청이 들어오면 이메일 중복 검사를 둘 다 통과해 500 에러 발생 가능",
+                solution:
+                    "DB unique 제약 위반 예외를 잡아 409 DUPLICATE_EMAIL로 변환하고, 로그인 실패는 이메일 · 비밀번호 구분 없이 같은 에러로 응답해 계정 존재 여부 노출 방지",
+            },
+            {
+                problem: "락 없는 재고 차감으로 동시 주문 시 Lost Update 발생 가능",
+                solution: "락 미적용 · 비관적 락 · Redis 분산락을 동시 주문 100건으로 비교 측정 예정",
+            },
+        ],
+        endpoints: [
+            "POST /api/auth/signup",
+            "POST /api/auth/login",
+            "GET  /api/members/me",
+            "GET  /api/products",
+            "GET  /api/products/{id}",
+            "POST /api/orders",
+        ],
+        tags: ["Java 25", "Spring Boot 4", "Spring Security", "JWT", "JPA", "MySQL", "Redis", "Docker", "Swagger"],
+        category: "major",
+        link: "https://shop-api.lsch.co.kr/swagger-ui/index.html",
+        linkLabel: "API 문서 보기 (Swagger)",
+        github: "https://github.com/cheul-95/commerce-api",
+    },
+    {
         id: 1,
         title: "모두의 부엌",
         description: "오늘 저녁 뭐 먹지? 매일 반복되는 고민을 해결하기 위한 레시피 공유 플랫폼입니다.",
@@ -33,13 +72,13 @@ const projectsData = [
         image: Recipe,
         tags: ["React", "TypeScript", "Supabase", "Vite", "Zustand", "Lexical"],
         category: "major",
-        link: "https://ourkitchen.store/",
+        link: "https://morningstarrecipe.netlify.app/",
         github: "https://github.com/stars-at-daybreak/morningStarRecipe",
     },
     {
         id: 2,
-        title: "프론트엔드 포트폴리오",
-        description: "프론트엔드 개발자 이상철의 포트폴리오 웹사이트입니다.",
+        title: "개발자 포트폴리오",
+        description: "풀스택 개발자 이상철의 포트폴리오 웹사이트입니다.",
         role: "개인 프로젝트",
         achievement: "실제 운영 중인 개인 포트폴리오 사이트",
         details: [
@@ -95,7 +134,7 @@ const projectsData = [
         image: stock,
         tags: ["Next.js", "TypeScript", "Tailwind CSS", "Recharts", "Axios"],
         category: "major",
-        link: "https://korean-stock-app-gamma.vercel.app/",
+        link: "https://main.d5arn3jvvurq9.amplifyapp.com/",
         github: "https://github.com/cheul-95/korean-stock-app",
     },
     {
@@ -203,11 +242,45 @@ const Projects = () => {
                                                     {/* 이미지 - 작게, 고정 높이 */}
                                                     <div className="w-full md:w-2/5 lg:w-1/3 flex-shrink-0">
                                                         <div className="relative rounded-lg overflow-hidden h-64 md:h-64 lg:h-[28rem]">
-                                                            <img
-                                                                src={project.image}
-                                                                alt={project.title}
-                                                                className="w-full h-full object-top object-cover"
-                                                            />
+                                                            {project.image ? (
+                                                                <img
+                                                                    src={project.image}
+                                                                    alt={project.title}
+                                                                    className="w-full h-full object-top object-cover"
+                                                                />
+                                                            ) : (
+                                                                <div className="w-full h-full bg-slate-950/90 border border-white/10 rounded-lg p-4 md:p-5 font-mono text-xs md:text-sm overflow-hidden">
+                                                                    <div className="flex gap-1.5 mb-4" aria-hidden="true">
+                                                                        <span className="w-3 h-3 rounded-full bg-red-400/80" />
+                                                                        <span className="w-3 h-3 rounded-full bg-yellow-400/80" />
+                                                                        <span className="w-3 h-3 rounded-full bg-green-400/80" />
+                                                                    </div>
+                                                                    <p className="text-emerald-400 mb-3">
+                                                                        $ curl shop-api.lsch.co.kr
+                                                                    </p>
+                                                                    <ul className="space-y-2">
+                                                                        {(project.endpoints || []).map((ep) => {
+                                                                            const [method, ...rest] = ep.split(" ");
+                                                                            return (
+                                                                                <li key={ep} className="flex gap-2">
+                                                                                    <span
+                                                                                        className={`w-10 flex-shrink-0 font-bold ${
+                                                                                            method === "GET"
+                                                                                                ? "text-sky-400"
+                                                                                                : "text-pink-400"
+                                                                                        }`}
+                                                                                    >
+                                                                                        {method}
+                                                                                    </span>
+                                                                                    <span className="text-white/80 break-all">
+                                                                                        {rest.join(" ").trim()}
+                                                                                    </span>
+                                                                                </li>
+                                                                            );
+                                                                        })}
+                                                                    </ul>
+                                                                </div>
+                                                            )}
                                                         </div>
                                                     </div>
 
@@ -300,7 +373,7 @@ const Projects = () => {
                                                                     rel="noopener noreferrer"
                                                                     className="px-4 py-2 bg-purple-700 text-white rounded-lg font-bold hover:bg-purple-600 transition-colors text-center text-sm"
                                                                 >
-                                                                    프로젝트 보기
+                                                                    {project.linkLabel || "프로젝트 보기"}
                                                                 </a>
                                                                 <a
                                                                     href={project.github}

@@ -7,7 +7,8 @@ const highlights = [
         id: "frameworks",
         icon: <Code className="w-6 h-6" />,
         title: "Multi-Platform Development",
-        description: "Spring Boot, CodeIgniter4, WordPress등 를 활용한 다양한 웹 플랫폼 구축 경험",
+        description:
+            "Spring Boot, Laravel, CodeIgniter4, 전자정부프레임워크, WordPress 등을 활용해 15개 이상의 웹 서비스 구축 · 운영",
         gradient: "from-blue-500 to-cyan-500",
         iconColor: "text-blue-400",
     },
@@ -15,7 +16,7 @@ const highlights = [
         id: "api",
         icon: <Globe className="w-6 h-6" />,
         title: "API Architecture",
-        description: "확장 가능하고 안정적인 RESTful API 설계 및 구현",
+        description: "Laravel · Spring Boot 기반 REST API 설계, JWT 인증, 트랜잭션 · 배치 처리 구현",
         gradient: "from-emerald-500 to-teal-500",
         iconColor: "text-emerald-400",
     },
@@ -34,6 +35,68 @@ const highlights = [
         description: "Slack, Figma, Notion을 통한 효율적인 팀워크 및 문서화",
         gradient: "from-purple-500 to-pink-500",
         iconColor: "text-purple-400",
+    },
+];
+
+const careers = [
+    {
+        company: "하이오티",
+        team: "개발팀 · 웹개발자",
+        period: "2025.12 ~ 2026.06",
+        stack: ["PHP", "CodeIgniter4", "Laravel", "React", "MariaDB", "AWS", "Docker"],
+        works: [
+            {
+                title: "호텔엔조이 정산 프로세스 자동화",
+                desc: "엑셀 · 수기 정산을 GROUP BY 집계 쿼리와 CI4 Spark 배치(크론 일 단위)로 재구축. 트랜잭션 롤백과 업체ID+정산일자 유니크 키로 중복 정산 방지",
+                result: "정산 처리 3시간 → 30분",
+            },
+            {
+                title: "호텔엔조이 업체 이미지 셀프 업로드",
+                desc: "CI4 Validation으로 확장자 위조 · 비정상 파일 차단, 업로드 시 썸네일 자동 리사이징, 랜덤 해시 파일명 저장",
+                result: "운영팀 수작업 일 1시간 이상 절감",
+            },
+            {
+                title: "폐배터리 산업 관리자 페이지 신규 구축",
+                desc: "Laravel REST API + React 관리자 화면 분리, 수거 → 폐기 → 판매 상태 이력 테이블 관리 및 허용되지 않은 상태 전이 서버 검증, Docker Compose로 EC2 배포",
+                result: "기획 검토부터 배포까지 5일 단독 구축",
+            },
+        ],
+    },
+    {
+        company: "네오컴즈",
+        team: "개발팀 · 웹개발자",
+        period: "2022.02 ~ 2025.05",
+        stack: ["PHP", "Java", "CodeIgniter", "전자정부프레임워크", "WordPress", "그누보드", "MariaDB"],
+        works: [
+            {
+                title: "금융 · 커머스 · 법무 · 헬스케어 클라이언트 프로젝트",
+                desc: "쿠팡, SK 스키노뉴스, 신한금융희망재단, 차바이오, 법무법인 바른 등 15개 이상 프로젝트 개발 · 유지보수",
+                result: "평균 납기보다 7일 이상 조기 완료",
+            },
+            {
+                title: "쿠팡 애즈 사용자 행동 트래킹 플러그인",
+                desc: "document 단위 이벤트 위임과 data-* 속성으로 추적 대상 관리, WP REST API로 자체 DB 저장과 GA 전송을 함께 하는 이중 수집 구조 설계",
+                result: "100개 이상 이벤트 자동 트래킹",
+            },
+            {
+                title: "랜덤팡 디스크 풀 장애 대응",
+                desc: "df · du로 세션 · 임시 파일 누적 원인 추적 후 즉시 복구, find 기반 정리 스크립트를 크론탭에 등록",
+                result: "적용 후 2개월간 재발 0건",
+            },
+        ],
+    },
+    {
+        company: "지넥슨",
+        team: "개발팀 · 웹개발자",
+        period: "2021.07 ~ 2022.02",
+        stack: ["Java", "Gradle", "MariaDB", "Docker", "Linux"],
+        works: [
+            {
+                title: "보험 설계사 스마트확인서 솔루션 유지보수",
+                desc: "일 평균 100명 이상이 쓰는 전자서명 문서 시스템에서 서명 후 파일 누락 이슈를 발견해 파일 존재 재검증 · 재서명 요청 로직 추가",
+                result: "전자서명 문서 유실 방지",
+            },
+        ],
     },
 ];
 
@@ -79,49 +142,52 @@ const About = () => {
                         <section className="max-w-4xl mx-auto py-10">
                             <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl shadow-lg p-6 sm:p-10 text-center space-y-6">
                                 <h3 className="text-xl sm:text-2xl md:text-3xl font-extrabold text-white">
-                                    프론트엔드 개발자 <span className="text-rose-400">이상철</span>
+                                    풀스택 개발자 <span className="text-rose-400">이상철</span>
                                 </h3>
 
                                 {/* Q&A 리스트 */}
                                 <dl className="space-y-6 text-left">
                                     <div className="bg-white/5 rounded-xl p-4 sm:p-6 border border-white/10">
                                         <dt className="text-sm sm:text-base font-semibold text-rose-400 mb-2">
-                                            Q. 프론트엔드 개발자로 전향한 이유가 있나요?
+                                            Q. 어떤 개발자인가요?
                                         </dt>
                                         <dd className="text-xs sm:text-sm md:text-base text-gray-200 leading-relaxed gmarket-medium">
-                                            네. 백엔드 개발을 하면서도 항상 사용자와 맞닿아 있는 화면에 더 많은 관심이
-                                            갔습니다. 프로젝트 중 프론트엔드의 한계를 직접 경험하며 부족함을 채우고
-                                            싶다는 생각이 들었고, 학습을 이어가면서{" "}
+                                            PHP · Java 백엔드 실무 4년 6개월을 바탕으로 React 화면까지 직접 만드는 풀스택
+                                            개발자입니다. 정산 배치 자동화, 관리자 페이지, 클라이언트 웹 서비스 등을
+                                            개발하며{" "}
                                             <span className="font-semibold text-rose-400">
-                                                사용자 경험을 개선하는 즐거움
-                                            </span>
-                                            을 크게 느껴 자연스럽게 프론트엔드에 전념하게 되었습니다.
+                                                API 설계부터 화면 구현, 배포까지
+                                            </span>{" "}
+                                            한 흐름으로 책임져 왔습니다.
                                         </dd>
                                     </div>
 
                                     <div className="bg-white/5 rounded-xl p-4 sm:p-6 border border-white/10">
                                         <dt className="text-sm sm:text-base font-semibold text-rose-400 mb-2">
-                                            Q. 이전 경험이 프론트엔드 개발에 어떻게 도움이 되나요?
+                                            Q. 백엔드와 프론트엔드를 함께 다루는 강점은 무엇인가요?
                                         </dt>
                                         <dd className="text-xs sm:text-sm md:text-base text-gray-200 leading-relaxed gmarket-medium">
-                                            네. 백엔드 경험 덕분에 API 구조나 데이터 흐름을 이해하는 데 강점이 있습니다.
-                                            덕분에 프론트엔드에서{" "}
+                                            화면에서 필요한 데이터를 알고 API를 설계하기 때문에 주고받는 구조가
+                                            단순해집니다. 폐배터리 관리자 페이지는 Laravel REST API와 React 화면을 직접
+                                            나눠 설계해{" "}
                                             <span className="font-semibold text-rose-400">
-                                                데이터를 효율적으로 처리하고, 팀 내에서 백엔드와 원활한 소통{" "}
+                                                기획 검토부터 배포까지 5일 만에 단독 구축
                                             </span>
-                                            을 할 수 있습니다.
+                                            했습니다.
                                         </dd>
                                     </div>
 
                                     <div className="bg-white/5 rounded-xl p-4 sm:p-6 border border-white/10">
                                         <dt className="text-sm sm:text-base font-semibold text-rose-400 mb-2">
-                                            Q. 앞으로 프론트엔드에서 이루고 싶은 목표는 무엇인가요?
+                                            Q. 앞으로 이루고 싶은 목표는 무엇인가요?
                                         </dt>
                                         <dd className="text-xs sm:text-sm md:text-base text-gray-200 leading-relaxed gmarket-medium">
-                                            사용자 중심의 직관적이고 깔끔한 웹 서비스를 만드는 것이 목표입니다. 또한
-                                            최신 기술을 익혀{" "}
-                                            <span className="font-semibold text-rose-400">성능과 접근성</span>을 모두
-                                            만족하는 프론트엔드 개발자가 되고 싶습니다.
+                                            반복되는 수작업과 비효율을 먼저 찾아 코드로 줄이는 개발자가 되고 싶습니다.
+                                            나아가 시스템 설계와 아키텍처에 대한 이해를 넓혀{" "}
+                                            <span className="font-semibold text-rose-400">
+                                                유지보수하기 쉽고 확장 가능한 서비스
+                                            </span>
+                                            를 만드는 것이 목표입니다.
                                         </dd>
                                     </div>
                                 </dl>
@@ -149,6 +215,71 @@ const About = () => {
                             </div>
                         </section>
                     </article>
+
+                    {/* 경력 */}
+                    <section
+                        aria-labelledby="career-heading"
+                        className={`max-w-4xl mx-auto mb-16 transition-all duration-1000 delay-300 ${
+                            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+                        }`}
+                    >
+                        <h3
+                            id="career-heading"
+                            className="text-2xl md:text-3xl font-extrabold text-white mb-8 flex items-center gap-3"
+                        >
+                            <span className="w-1.5 h-8 bg-gradient-to-b from-pink-400 to-rose-500 rounded-full" />
+                            Career
+                            <span className="text-sm md:text-base font-semibold text-rose-400">총 4년 6개월</span>
+                        </h3>
+
+                        <ol className="relative border-l border-white/20 ml-2 space-y-10">
+                            {careers.map((career) => (
+                                <li key={career.company} className="pl-6 md:pl-8 relative">
+                                    <span
+                                        className="absolute -left-[7px] top-1.5 w-3 h-3 rounded-full bg-rose-400 ring-4 ring-rose-400/20"
+                                        aria-hidden="true"
+                                    />
+                                    <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1 mb-3">
+                                        <div>
+                                            <h4 className="text-lg md:text-xl font-bold text-white">{career.company}</h4>
+                                            <p className="text-xs md:text-sm text-gray-400">{career.team}</p>
+                                        </div>
+                                        <p className="text-xs md:text-sm text-gray-300 font-medium">{career.period}</p>
+                                    </div>
+
+                                    <div className="flex flex-wrap gap-1.5 mb-4">
+                                        {career.stack.map((s) => (
+                                            <span
+                                                key={s}
+                                                className="px-2 py-0.5 bg-white/10 text-white/80 text-xs font-semibold rounded"
+                                            >
+                                                {s}
+                                            </span>
+                                        ))}
+                                    </div>
+
+                                    <ul className="space-y-3">
+                                        {career.works.map((work) => (
+                                            <li
+                                                key={work.title}
+                                                className="bg-white/5 border border-white/10 rounded-xl p-4"
+                                            >
+                                                <p className="text-sm md:text-base font-semibold text-white mb-1">
+                                                    {work.title}
+                                                </p>
+                                                <p className="text-xs md:text-sm text-gray-300 leading-relaxed gmarket-medium">
+                                                    {work.desc}
+                                                </p>
+                                                <p className="mt-2 text-xs md:text-sm font-semibold text-rose-400">
+                                                    → {work.result}
+                                                </p>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </li>
+                            ))}
+                        </ol>
+                    </section>
 
                     {/* 하이라이트 카드 */}
                     <section

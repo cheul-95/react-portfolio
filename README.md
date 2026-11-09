@@ -4,7 +4,7 @@
 
 ## 프로젝트 소개
 
-프론트엔드 개발자 이상철의 **개인 포트폴리오 웹사이트**입니다.
+풀스택 개발자 이상철의 **개인 포트폴리오 웹사이트**입니다.
 
 ### 목표
 - 깔끔하고 직관적인 UI/UX로 개발자의 역량과 프로젝트를 효과적으로 전달
@@ -17,7 +17,7 @@
 |:---:|:---:|:---:|
 | 보유 기술과 숙련도 시각화 | 진행한 프로젝트들의 상세 정보 제공 | 개발자 소개 및 주요 역량 표시 |
 | <img width="250" alt="image" src="https://github.com/user-attachments/assets/486a861a-f237-4f3b-8aa2-980442a55c38" />|<img width="250" alt="image" src="https://github.com/user-attachments/assets/1f7ded09-69d7-48c3-946b-c49313dc50ae" /> | <img width="250" alt="image" src="https://github.com/user-attachments/assets/972d127a-4b81-4c8a-b6d5-f5109be0205f" />|
-| • 사용 기술 스택 표시<br>• 라이브 데모 및 GitHub 링크 | • 프론트엔드 기술 스택<br>• 숙련도 레벨 표시 | • 프로필 정보  요약<br>• 핵심 강점 강조<br>• SNS 및 연락처 링크| 
+| • 사용 기술 스택 표시<br>• 라이브 데모 및 GitHub 링크 | • 프론트엔드 · 백엔드 기술 스택<br>• 숙련도 레벨 표시 | • 프로필 정보  요약<br>• 핵심 강점 강조<br>• SNS 및 연락처 링크| 
 | **연락하기** |**반응형 디자인** |
 | 간편한 연락 방법 제공 | 모든 디바이스 최적화  |
 | <img width="250" alt="image" src="https://github.com/user-attachments/assets/bc23878b-df35-4eab-86bb-89622d720803" /> |<img width="250" alt="image" src="https://github.com/user-attachments/assets/5927eda1-6b02-4deb-8fe3-eea202b170aa" />|
