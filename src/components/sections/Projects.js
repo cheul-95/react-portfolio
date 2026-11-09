@@ -11,25 +11,27 @@ const projectsData = [
         id: 7,
         title: "Shop API (커머스 백엔드)",
         description:
-            "회원 · 상품 · 주문 · 재고를 다루는 커머스 REST API입니다. 단순 CRUD를 넘어 동시 주문 상황의 재고 정합성과 JPA N+1 문제를 직접 재현하고 개선하는 것을 목표로 합니다.",
+            "회원 · 상품 · 주문 · 재고를 다루는 Spring Boot 커머스 REST API입니다. 기능 구현보다 왜 이렇게 설계했는지 기록하고, 동시성 · 트랜잭션 문제를 직접 재현해 확인하는 것을 목표로 했습니다.",
         role: "개인 프로젝트 | 백엔드 설계 · 개발 · 배포",
-        achievement: "shop-api.lsch.co.kr 실서버 배포, Swagger UI로 API 직접 호출 가능",
+        achievement: "AWS EC2 실서버 운영, GitHub Actions CI/CD, 테스트 26개",
         details: [
-            "Spring Security + JWT(HS256) 필터 기반 Stateless 인증 · 인가 구현",
-            "비즈니스 규칙(재고 차감, 주문 생성 · 취소)을 엔티티 메서드로 캡슐화하고 주문 시점 가격 별도 저장",
-            "@EntityGraph와 batch fetch size로 상품 목록 조회 N+1 방지, open-in-view 비활성화",
-            "{code, message} 형식의 공통 에러 응답으로 필터 단계 401/403까지 통일",
-            "Docker Compose로 MySQL · Redis 로컬 환경 구성, JUnit 5 · Mockito 단위 테스트 작성",
+            "재고 100에 동시 주문 100건을 보내 Lost Update · 데드락 재현, 비관적 락 적용 후 100건 전부 성공",
+            "주문 저장과 재고 차감을 하나의 트랜잭션으로 묶고, OrderItem 생성 경로를 막아 재고 차감 누락을 컴파일 단계에서 방지",
+            "GitHub Actions로 테스트 → 이미지 빌드(GHCR) → SSH 배포 → 헬스체크 자동화, Nginx + Let's Encrypt HTTPS",
+            "Spring Security + JWT 필터 인증, 필터 단계 401/403까지 같은 에러 형식으로 응답",
+            "H2 대신 Testcontainers MySQL로 운영과 같은 DB에서 통합 테스트",
         ],
         challenges: [
             {
-                problem: "회원가입 시 동시 요청이 들어오면 이메일 중복 검사를 둘 다 통과해 500 에러 발생 가능",
+                problem:
+                    "동시 주문 100건 중 17건만 성공하고 재고는 8만 감소(Lost Update), 나머지 83건은 데드락으로 실패",
                 solution:
-                    "DB unique 제약 위반 예외를 잡아 409 DUPLICATE_EMAIL로 변환하고, 로그인 실패는 이메일 · 비밀번호 구분 없이 같은 에러로 응답해 계정 존재 여부 노출 방지",
+                    "FK 검사의 S 락이 커밋 시 X 락으로 올라가며 충돌하는 원인을 분석하고, 낙관적 락(90% 실패)과 비교한 뒤 비관적 락(SELECT ... FOR UPDATE)과 id 순 락 획득으로 100건 모두 성공 · 재고 정확히 0",
             },
             {
-                problem: "락 없는 재고 차감으로 동시 주문 시 Lost Update 발생 가능",
-                solution: "락 미적용 · 비관적 락 · Redis 분산락을 동시 주문 100건으로 비교 측정 예정",
+                problem: "@Transactional을 제거하자 주문은 저장되고 재고는 그대로인 데이터 불일치 발생",
+                solution:
+                    "open-in-view: false 환경에서 Repository 호출마다 영속성 컨텍스트가 분리돼 준영속 상태가 되는 원인을 확인하고, 주문 · 재고 차감을 하나의 트랜잭션과 dirty checking으로 처리",
             },
         ],
         endpoints: [
@@ -40,11 +42,22 @@ const projectsData = [
             "GET  /api/products/{id}",
             "POST /api/orders",
         ],
-        tags: ["Java 25", "Spring Boot 4", "Spring Security", "JWT", "JPA", "MySQL", "Redis", "Docker", "Swagger"],
+        tags: [
+            "Java 17",
+            "Spring Boot 4",
+            "Spring Security",
+            "JWT",
+            "JPA",
+            "MySQL",
+            "Testcontainers",
+            "Docker",
+            "GitHub Actions",
+            "AWS EC2",
+        ],
         category: "major",
         link: "https://shop-api.lsch.co.kr/swagger-ui/index.html",
         linkLabel: "API 문서 보기 (Swagger)",
-        github: "https://github.com/cheul-95/commerce-api",
+        github: "https://github.com/cheul-95/shop-api",
     },
     {
         id: 1,
