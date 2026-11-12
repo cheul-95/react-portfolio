@@ -91,16 +91,15 @@ const projectsData = [
     {
         id: 2,
         title: "개발자 포트폴리오",
-        description: "풀스택 개발자 이상철의 포트폴리오 웹사이트입니다.",
+        description: "백엔드 개발자 이상철의 포트폴리오 웹사이트입니다.",
         role: "개인 프로젝트",
         achievement: "실제 운영 중인 개인 포트폴리오 사이트",
         details: [
-            "React 19.1.1과 TypeScript로 컴포넌트 기반 SPA 구현",
+            "React 19로 컴포넌트 기반 SPA 구현",
             "Tailwind CSS를 활용한 반응형 인터랙티브 UI 개발",
             "AWS S3 + CloudFront로 정적 웹사이트 호스팅 구축",
             "Route 53으로 커스텀 도메인(lsch.co.kr) 연결 및 DNS 관리",
             "ACM 인증서를 통한 HTTPS 적용",
-            "Vite 번들러로 빠른 빌드 속도 달성",
         ],
         challenges: [
             {
@@ -114,8 +113,8 @@ const projectsData = [
             },
         ],
         image: Portfolio,
-        tags: ["React", "TypeScript", "Tailwind CSS", "AWS S3", "CloudFront", "Route 53"],
-        category: "major",
+        tags: ["React", "Tailwind CSS", "AWS S3", "CloudFront", "Route 53"],
+        category: "minor",
         link: "https://lsch.co.kr/",
         github: "https://github.com/cheul-95/react-portfolio",
     },

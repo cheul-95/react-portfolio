@@ -123,7 +123,7 @@ function Header() {
 
                     {/* 모바일 시그니처 */}
                     <div className="mt-6 pt-4 border-t border-slate-600/30 text-center md:hidden">
-                        <h1 className="text-xs text-slate-400">이상철 • Full-Stack Developer</h1>
+                        <h1 className="text-xs text-slate-400">이상철 • Backend Developer</h1>
                     </div>
                 </div>
             </header>

@@ -2,74 +2,13 @@ import { useState, useEffect } from "react";
 
 const skills = [
     {
-        id: "html",
-        name: "HTML",
-        level: 90,
-        icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg",
-        category: "Frontend",
-        description: "시맨틱 마크업",
-        detailedDescription:
-            "웹의 기본 구조를 담당하는 마크업 언어로, 접근성과 SEO를 고려한 시맨틱 웹 구조 설계에 집중하고 있습니다. 향후 웹 표준을 준수하는 고품질의 마크업으로 사용자와 검색엔진 모두에게 친화적인 웹사이트를 구축하여, 더 나은 사용자 경험과 높은 검색 순위를 달성하겠습니다.",
-        experience: "실무 경험",
-        color: "#e34c26",
-        orbitRadius: 330,
-        mobileOrbitRadius: 160,
-        angle: 0,
-    },
-    {
-        id: "css",
-        name: "CSS",
-        level: 85,
-        icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg",
-        category: "Frontend",
-        description: "반응형 디자인",
-        detailedDescription:
-            "모든 디바이스에서 완벽하게 작동하는 반응형 웹 디자인을 전문으로 합니다. CSS Grid, Flexbox, 그리고 최신 CSS 기법을 활용하여 직관적이고 아름다운 사용자 인터페이스를 구현할 것입니다. 애니메이션과 트랜지션을 통해 사용자 경험을 극대화하는 인터랙티브한 웹사이트를 제작하겠습니다.",
-        experience: "실무 경험",
-        color: "#1572b6",
-        orbitRadius: 330,
-        mobileOrbitRadius: 160,
-        angle: 60,
-    },
-    {
-        id: "javascript",
-        name: "JavaScript",
-        level: 80,
-        icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
-        category: "Frontend",
-        description: "ES6+ 문법 학습",
-        detailedDescription:
-            "ES6+ 최신 문법을 활용한 모던 JavaScript 개발에 주력하고 있습니다. 비동기 처리, DOM 조작, API 통신 등을 통해 동적이고 반응성 있는 웹 애플리케이션을 구현할 예정입니다. 성능 최적화와 코드 품질 향상을 통해 사용자가 만족할 수 있는 빠르고 안정적인 웹 서비스를 제공하겠습니다.",
-        experience: "학습 및 프로젝트 경험",
-        color: "#f7df1e",
-        orbitRadius: 330,
-        mobileOrbitRadius: 160,
-        angle: 140,
-    },
-    {
-        id: "react",
-        name: "React",
-        level: 65,
-        icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
-        category: "Frontend",
-        description: "컴포넌트 개발",
-        detailedDescription:
-            "컴포넌트 기반 개발을 통해 재사용성과 유지보수성이 뛰어난 웹 애플리케이션을 구축하는 것이 목표입니다. React Hooks와 상태 관리를 활용하여 복잡한 사용자 인터페이스를 효율적으로 관리하고, 사용자 경험을 최우선으로 고려한 인터랙티브한 웹 서비스를 개발하겠습니다.",
-        experience: "실무 및 프로젝트 경험",
-        color: "#61dafb",
-        orbitRadius: 260,
-        mobileOrbitRadius: 100,
-        angle: 180,
-    },
-    {
         id: "java",
         name: "Java",
-        level: 80,
         icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg",
         category: "Backend",
-        description: "웹 개발 경험",
+        description: "첫 실무 언어 · 주력 전환 중",
         detailedDescription:
-            "지넥슨에서 보험 설계사용 전자서명 문서 시스템(Java, Gradle, Docker)을 유지보수하며 파일 누락을 막는 방어 로직을 추가했고, 네오컴즈에서는 전자정부프레임워크 기반 프로젝트를 개발했습니다. 개인 프로젝트 Shop API에서는 Spring Boot 4, Spring Security + JWT, JPA로 커머스 API를 설계 · 배포하며 N+1 방지와 재고 동시성 제어를 다루고 있습니다.",
+            "지넥슨에서 보험 설계사용 전자서명 문서 시스템(Servlet/JSP, Gradle, Docker)을 유지보수하며 파일 누락을 막는 방어 로직을 추가했고, 네오컴즈에서는 전자정부프레임워크와 MyBatis로 공장 재고관리 시스템을 1인 개발했습니다. 개인 프로젝트 Shop API에서는 Spring Boot, JPA로 커머스 API를 설계 · 배포하며 N+1 방지와 재고 동시성 제어를 다뤘습니다.",
         experience: "실무 경험",
         color: "#f89820",
         orbitRadius: 330,
@@ -77,9 +16,22 @@ const skills = [
         angle: 240,
     },
     {
+        id: "spring",
+        name: "Spring Boot",
+        icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg",
+        category: "Backend",
+        description: "트랜잭션 · 동시성 · 인증",
+        detailedDescription:
+            "개인 프로젝트 Shop API에서 Spring Boot, JPA, Spring Security + JWT로 커머스 API를 설계하고 EC2에 배포했습니다. 동시 주문 100건으로 Lost Update와 데드락을 재현해 비관적 락으로 해결했고, Testcontainers 통합 테스트와 GitHub Actions CI/CD를 갖췄습니다. 실무에서는 Spring 기반 전자정부프레임워크와 MyBatis로 재고관리 시스템을 단독 개발했습니다.",
+        experience: "실무 및 프로젝트 경험",
+        color: "#6db33f",
+        orbitRadius: 260,
+        mobileOrbitRadius: 100,
+        angle: 300,
+    },
+    {
         id: "php",
         name: "PHP",
-        level: 80,
         icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg",
         category: "Backend",
         description: "웹 개발 경험",
@@ -94,7 +46,6 @@ const skills = [
     {
         id: "mysql",
         name: "MySQL",
-        level: 80,
         icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg",
         category: "Database",
         description: "DB 설계 및 관리",
@@ -105,6 +56,62 @@ const skills = [
         orbitRadius: 260,
         mobileOrbitRadius: 100,
         angle: 40,
+    },
+    {
+        id: "react",
+        name: "React",
+        icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
+        category: "Frontend",
+        description: "컴포넌트 개발",
+        detailedDescription:
+            "폐배터리 관리자 페이지에서 Laravel API와 연동되는 React 관리자 화면을 직접 만들었고, 부트캠프 팀 프로젝트(모두의 부엌, 최우수상)에서 Hooks와 Zustand로 상태를 관리했습니다. API를 쓰는 쪽을 이해해 백엔드 응답 구조를 설계할 때 활용합니다.",
+        experience: "실무 및 프로젝트 경험",
+        color: "#61dafb",
+        orbitRadius: 260,
+        mobileOrbitRadius: 100,
+        angle: 180,
+    },
+    {
+        id: "javascript",
+        name: "JavaScript",
+        icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
+        category: "Frontend",
+        description: "ES6+ 문법 학습",
+        detailedDescription:
+            "쿠팡 애즈 트래킹 플러그인에서 이벤트 위임과 data-* 속성으로 100개 이상의 사용자 행동 이벤트를 자동 수집하는 구조를 만들었습니다. 비동기 처리와 API 통신을 실무에서 꾸준히 사용했습니다.",
+        experience: "학습 및 프로젝트 경험",
+        color: "#f7df1e",
+        orbitRadius: 330,
+        mobileOrbitRadius: 160,
+        angle: 140,
+    },
+    {
+        id: "html",
+        name: "HTML",
+        icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg",
+        category: "Frontend",
+        description: "시맨틱 마크업",
+        detailedDescription:
+            "실무에서 WordPress · 그누보드 기반 클라이언트 사이트와 관리자 화면을 만들며 사용했습니다. 접근성과 SEO를 고려한 시맨틱 마크업을 기본으로 작성합니다.",
+        experience: "실무 경험",
+        color: "#e34c26",
+        orbitRadius: 330,
+        mobileOrbitRadius: 160,
+        angle: 0,
+    },
+    {
+        id: "css",
+        name: "CSS",
+        icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg",
+        category: "Frontend",
+        description: "반응형 디자인",
+        detailedDescription:
+            "Flexbox · Grid와 Tailwind CSS로 반응형 화면을 구현합니다. 이 포트폴리오 사이트와 부트캠프 프로젝트의 스타일을 직접 작성했습니다.",
+        experience: "실무 경험",
+        color: "#1572b6",
+        orbitRadius: 330,
+        mobileOrbitRadius: 160,
+        angle: 60,
     },
 ];
 
@@ -212,8 +219,8 @@ const CosmicSkillsSection = () => {
                     </h2>
                     <div className="w-20 md:w-32 h-1 bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 mx-auto rounded-full mb-2 md:mb-4" />
                     <p className="text-cyan-200 text-sm md:text-lg max-w-2xl mx-auto px-4 gmarket-medium">
-                        우주처럼 넓은 기술 스택을 탐험하며,
-                        <br /> 각 기술은 고유한 궤도를 그리며 발전하고 있습니다
+                        Java · Spring Boot 백엔드를 중심으로,
+                        <br /> 각 기술을 실제로 어디에 썼는지 정리했습니다
                     </p>
                 </header>
 
@@ -390,25 +397,6 @@ const CosmicSkillsSection = () => {
                                     style={{ backgroundColor: `${activeSkill.color}80` }}
                                 >
                                     {activeSkill.category}
-                                </span>
-                            </div>
-
-                            <div className="flex items-center gap-4 mb-4">
-                                <div className="flex-1">
-                                    <div className="w-full bg-white/20 rounded-full h-3 md:h-4 mb-2 relative overflow-hidden">
-                                        <div
-                                            className="h-3 md:h-4 rounded-full transition-all duration-1000 ease-out relative"
-                                            style={{
-                                                width: `${activeSkill.level}%`,
-                                                background: `linear-gradient(90deg, ${activeSkill.color}, ${activeSkill.color}CC)`,
-                                            }}
-                                        >
-                                            <div className="absolute inset-0 bg-white/20 animate-pulse" />
-                                        </div>
-                                    </div>
-                                </div>
-                                <span className="text-cyan-300 font-bold text-base md:text-lg mb-2">
-                                    {activeSkill.level}%
                                 </span>
                             </div>
 

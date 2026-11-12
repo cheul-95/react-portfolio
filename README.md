@@ -4,7 +4,7 @@
 
 ## 프로젝트 소개
 
-풀스택 개발자 이상철의 **개인 포트폴리오 웹사이트**입니다.
+백엔드 개발자 이상철의 **개인 포트폴리오 웹사이트**입니다.
 
 ### 목표
 - 깔끔하고 직관적인 UI/UX로 개발자의 역량과 프로젝트를 효과적으로 전달
@@ -105,7 +105,7 @@ react-portfolio/
 
 ## 연락처
 
-- **이메일**: tkdcjf3552@gmail.com
+- **이메일**: lsch9040@naver.com
 - **GitHub**: [github.com/cheul-95](https://github.com/cheul-95)
 - **포트폴리오**: [https://lsch.co.kr/](https://lsch.co.kr/)
 
